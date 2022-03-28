@@ -1,0 +1,20 @@
+import random
+
+print("Rock Paper Scissors!")
+rps_list = ["r", "p", "s"]
+rps_dict = {"r":"rock", "p":"paper", "s":"scissors"}
+win_cond = [("r","s"),("p","r"),("s","p")]
+
+choice = None
+while choice not in rps_list:
+    choice = input("Please input 'r'/'p'/'s'")
+
+comp_hand = random.choice(rps_list)
+print(f"The computer sent {rps_dict[comp_hand]}!")
+
+if (choice,comp_hand) in win_cond:
+    print("You win!")
+elif (comp_hand,choice) in win_cond:
+    print("You lose")
+else:
+    print("Draw!")
